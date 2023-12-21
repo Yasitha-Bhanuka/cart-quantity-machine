@@ -60,14 +60,16 @@
   </button>
   <button onclick="
     cartQuantity -= 2;
-    console.log(`Cart quantity : ${cartQuantity}`);
+    (cartQuantity <= 0) && alert(`Not enough items in the cart`), cartQuantity = 0;
+    (cartQuantity >= 0) && console.log(`Cart quantity : ${cartQuantity}`);
     !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
     ">
     -2
   </button>
   <button onclick="
     cartQuantity -= 4;
-    console.log(`Cart quantity : ${cartQuantity}`);
+    (cartQuantity <= 0) && alert(`Not enough items in the cart`) , cartQuantity = 0;
+    (cartQuantity >= 0) && console.log(`Cart quantity : ${cartQuantity}`);
     !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
     ">
     -4
