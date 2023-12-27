@@ -4,85 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cart quantity machine</title>
-  
+
+  <style>
+    .js-qty{
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <p>Cart Quantity</p>
-  <button onclick="
-    console.log(`Cart quantity : ${cartQuantity}`);
-
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
-    
+  <button onclick=" 
+  qtyFunction();
     ">
     Show Quantity
   </button>
-  <button onclick="
+  <button onclick=" 
     cartQuantity++;
-    console.log(`Cart quantity : ${cartQuantity}`);
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
+    qtyFunction();
     ">
     Add to Cart
   </button>
-  <button onclick="
+  <button onclick=" 
     cartQuantity--;
-    console.log(`Cart quantity : ${cartQuantity}`);
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
+    qtyFunction();
     ">
     Remove from cart
   </button>
-  <button onclick="
+  <button onclick=" 
     cartQuantity += 2;
-    console.log(`Cart quantity : ${cartQuantity}`);
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
+    qtyFunction();
     ">
     +2
   </button>
-  <button onclick="
+  <button onclick=" 
     cartQuantity += 3;
-    console.log(`Cart quantity : ${cartQuantity}`);
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
+    qtyFunction();
     ">
     +3
   </button>
-  <button onclick="
+  <button onclick=" 
     cartQuantity += 4;
-    console.log(`Cart quantity : ${cartQuantity}`);
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
+    qtyFunction();
     ">
     +4
   </button>
-  <button onclick="
+  <button onclick=" 
     cartQuantity += 5;
-    console.log(`Cart quantity : ${cartQuantity}`);
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
+    qtyFunction();
     ">
     +5
   </button>
-  <button onclick="
+  <button onclick=" 
     cartQuantity -= 2;
-    (cartQuantity <= 0) && alert(`Not enough items in the cart`), cartQuantity = 0;
-    (cartQuantity >= 0) && console.log(`Cart quantity : ${cartQuantity}`);
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
+    qtyFunction();
     ">
     -2
   </button>
-  <button onclick="
-    cartQuantity -= 4;
-    (cartQuantity <= 0) && alert(`Not enough items in the cart`) , cartQuantity = 0;
-    (cartQuantity >= 0) && console.log(`Cart quantity : ${cartQuantity}`);
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
-    ">
+  <button 
+  onclick=" 
+  cartQuantity -= 4;
+  qtyFunction();
+  ">
     -4
   </button>
   <button onclick="
     cartQuantity = 0;
-    !(cartQuantity <= 10) && alert(`The cart is full maximum quantity is 10. You have now ${cartQuantity}`); 
-    console.log(`Cart was reset.`)
-  ">
+    qtyFunction();
+    ">
     Reset Cart
   </button>
+  
+  <p class="js-qty"></p>
+  
+    
   <script>
     let cartQuantity = 0;
-  </script>
+
+    function qtyFunction(){
+      document.querySelector('.js-qty').innerHTML = `Cart quantity : ${cartQuantity}`;
+    }
+    </script>
 </body>
 </html>
